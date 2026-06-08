@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend build
+dist/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Runtime data
+backend/chroma_data/
+backend/uploads/
+backend/*.db
+backend/*.sqlite3
+backend/checkpointer.db
+
+# Logs and pid files
+*.log
+*.pid
+
+# IDE / local config
+.idea/
+.vscode/
+.claude/
+
+# AI agent / local assistant context
+AGENTS.md
+agents.md
+agent.md
+CLAUDE.md
+claude.md
+.codex/
+.agents/
+
+# Local multi-agent harness state
+harness.json
+feature_list.json
+
+# AI-generated planning/test notes, not executable test suites
+tests/.test.md
+tests/*.test.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc local state
+.cache/
+coverage/
+.sass-cache/
