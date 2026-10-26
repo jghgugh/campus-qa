@@ -374,7 +374,7 @@ async def _summarize_recent_memory(transcript: str) -> str:
         return ""
 
     system_prompt = (
-        "你是企业知识库问答系统的短期记忆压缩器。"
+        "你是校园知识库问答系统的短期记忆压缩器。"
         "请把最近对话窗口压缩成一条近期记忆，保留用户身份、偏好、约束、当前任务、明确问题、关键结论和待办。"
         "不要逐字复述长文本，不要编造未确认事实，不要输出 Markdown 标题。"
     )
@@ -397,7 +397,7 @@ async def _summarize_conversation_memory(previous_summary: str, transcript: str)
         return ""
 
     system_prompt = (
-        "你是企业知识库问答系统的会话记忆压缩器。"
+        "你是校园知识库问答系统的会话记忆压缩器。"
         "请把给定的记忆内容压缩成可用于后续追问理解的中文摘要。"
         "只保留用户身份、长期偏好、明确约束、当前任务背景、未解决问题和待办。"
         "不要保存知识库原文大段内容，不要编造未确认事实，不要输出 Markdown 标题。"

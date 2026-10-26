@@ -62,7 +62,7 @@
             <el-icon :size="30"><ChatDotSquare /></el-icon>
           </div>
           <h1 class="mt-5 text-2xl font-semibold text-slate-900">今天想了解什么？</h1>
-          <p class="mt-2 text-sm text-slate-500">向企业知识库提问，系统会结合已上传资料生成答案。</p>
+          <p class="mt-2 text-sm text-slate-500">向校园知识库提问，系统会结合已上传资料生成答案。</p>
           <div class="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <button
               v-for="suggestion in CHAT_SUGGESTIONS"

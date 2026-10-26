@@ -2,12 +2,10 @@
   <el-container class="h-screen bg-slate-100">
     <el-aside width="280px" class="flex flex-col border-r border-slate-200 bg-white">
       <div class="flex h-16 items-center gap-3 border-b border-slate-200 px-5">
-        <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-600 text-white">
-          <el-icon><Connection /></el-icon>
-        </div>
+        <AppLogo :size="36" />
         <div>
-          <div class="text-sm font-semibold leading-5 text-slate-900">企业知识库</div>
-          <div class="text-xs text-slate-500">智能问答 Agent</div>
+          <div class="text-sm font-semibold leading-5 text-slate-900">校园知识库</div>
+          <div class="text-xs text-slate-500">校园智能问答助手</div>
         </div>
       </div>
 
@@ -160,7 +158,6 @@ import {
   ArrowDown,
   ChatDotSquare,
   ChatLineRound,
-  Connection,
   Delete,
   FolderOpened,
   Operation,
@@ -170,6 +167,7 @@ import { useChatStore } from '@/stores/chat'
 import { useUserStore } from '@/stores/user'
 import { confirmCenteredDelete } from '@/utils/confirm'
 import { normalizeApiAssetUrl } from '@/utils/url'
+import AppLogo from '@/components/AppLogo.vue'
 
 const route = useRoute()
 const router = useRouter()

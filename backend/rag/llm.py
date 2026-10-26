@@ -102,7 +102,7 @@ async def call_router_json(payload: dict) -> dict:
         raise RuntimeError("路由模型 API Key 未配置")
     model = get_text_fallback_model(streaming=False, temperature=0, max_tokens=300)
     system_prompt = (
-        "你是企业知识库 RAG 路由器，只判断当前问题是否需要检索企业知识库。"
+        "你是校园知识库 RAG 路由器，只判断当前问题是否需要检索校园知识库。"
         "只输出 JSON，不要输出 Markdown。字段必须是："
         "need_rag(boolean), route(string: rag/direct), confidence(number:0-1), reason(string), source(string)。"
         "如果问题询问公司制度、规章、流程、文件、知识库或上传资料内容，need_rag=true。"
@@ -195,20 +195,20 @@ async def stream_answer_events(
 def build_answer_messages(question: str, context: str, memory_context: str, use_rag: bool) -> list[tuple[str, str]]:
     if use_rag:
         system_prompt = (
-            "你是企业知识库智能问答助手。请优先基于提供的企业知识库上下文回答用户问题；"
+            "你是校园知识库智能问答助手，服务对象是学生和教职工，知识库覆盖教学管理、学生事务、校园规章制度、后勤服务等校园场景。请优先基于提供的校园知识库上下文回答用户问题；"
             "如果知识库信息不足，请明确说明不足之处，并给出可验证的建议。"
             "回答使用中文，结构清晰，避免编造未在上下文中出现的事实。"
-            "信息优先级为：企业知识库上下文 > 当前用户问题 > 会话记忆。"
+            "信息优先级为：校园知识库上下文 > 当前用户问题 > 会话记忆。"
             "会话记忆只能用于理解指代、延续任务和用户偏好，不能替代知识库事实依据。"
         )
         user_prompt = (
             f"用户问题：{question}\n\n"
             f"会话记忆：\n{memory_context or '（无）'}\n\n"
-            f"企业知识库上下文：\n{context or '（未检索到相关知识库内容）'}"
+            f"校园知识库上下文：\n{context or '（未检索到相关知识库内容）'}"
         )
     else:
         system_prompt = (
-            "你是企业对话助手。当前问题不需要知识库检索，请直接回答。"
+            "你是校园对话助手。当前问题不需要知识库检索，请直接回答。"
             "你可以结合会话记忆理解指代和上下文，但不要声称自己检索到了知识库。"
             "如果信息不足，请明确说明，而不是编造知识库事实。"
         )

@@ -4,7 +4,7 @@
       <div class="mb-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <h1 class="text-2xl font-semibold text-slate-900">知识库管理</h1>
-          <p class="mt-1 text-sm text-slate-500">上传企业资料，为智能问答提供检索依据。</p>
+          <p class="mt-1 text-sm text-slate-500">上传校园资料，为智能问答提供检索依据。</p>
         </div>
 
         <div class="flex flex-wrap items-center gap-2">

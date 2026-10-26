@@ -40,6 +40,7 @@ CLAUDE.md
 claude.md
 .codex/
 .agents/
+.understand-anything/
 
 # Local multi-agent harness state
 harness.json

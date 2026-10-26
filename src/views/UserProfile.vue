@@ -31,7 +31,7 @@
             </el-upload>
             <div class="min-w-0">
               <div class="truncate text-lg font-semibold text-slate-900">{{ userStore.displayName }}</div>
-              <div class="mt-1 text-sm text-slate-500">企业知识库用户</div>
+              <div class="mt-1 text-sm text-slate-500">校园知识库用户</div>
             </div>
           </div>
 

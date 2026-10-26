@@ -53,7 +53,7 @@ async def _rerank_chunks_with_qwen3(question: str, chunks: list[dict]) -> tuple[
         "query": question,
         "documents": documents,
         "top_n": min(RETRIEVAL_RERANK_TOP_N, len(chunks)),
-        "instruct": "根据用户问题判断企业知识库片段的相关性，优先选择能够直接回答问题的片段。",
+        "instruct": "根据用户问题判断校园知识库片段的相关性，优先选择能够直接回答问题的片段。",
     }
     headers = {
         "Authorization": f"Bearer {RERANK_API_KEY}",
@@ -141,7 +141,7 @@ async def _rerank_chunks_with_llm(question: str, chunks: list[dict]) -> tuple[li
         for index, chunk in enumerate(chunks, start=1)
     ]
     system_prompt = (
-        "你是企业知识库 RAG 重排器。只输出 JSON，不要输出 Markdown。"
+        "你是校园知识库 RAG 重排器。只输出 JSON，不要输出 Markdown。"
         "根据用户问题评估候选片段的相关性，返回字段 results，数组元素包含 id、score、reason。"
         "score 范围 0 到 1。"
     )

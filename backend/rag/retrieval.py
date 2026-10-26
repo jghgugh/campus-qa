@@ -43,12 +43,12 @@ async def decide_need_rag(
 
 async def build_query_plan(question: str) -> dict:
     system_prompt = (
-        "你是企业知识库 RAG 检索规划器。只输出 JSON，不要输出 Markdown。"
+        "你是校园知识库 RAG 检索规划器。只输出 JSON，不要输出 Markdown。"
         "字段必须是：hyde_document、rewrites、keywords。"
     )
     user_prompt = (
         "请为下面的用户问题生成："
-        "1. 一段可能出现在企业文档里的假设答案文档 hyde_document；"
+        "1. 一段可能出现在校园文档里的假设答案文档 hyde_document；"
         "2. 3 个语义不同但意图一致的检索改写 rewrites；"
         "3. 不超过 8 个中文关键词 keywords。"
         f"\n\n用户问题：{question}"
